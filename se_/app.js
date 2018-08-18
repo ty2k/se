@@ -191,7 +191,8 @@ message = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
     to: GM_USER,
     subject:'QUOTE REQUEST - Sharper Edges DC',
-    text: '${req.body.description}'
+    text: req.body.description
+};
 
 smtpTrans.sendMail(message, function (error, response) {
     if (error) {
